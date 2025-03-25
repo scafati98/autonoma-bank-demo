@@ -1,14 +1,11 @@
 name: Run Autonoma Tests
 
 on:
-  workflow_dispatch:  # Allows manual trigger
-  push:
-    branches:
-      - main  # Runs when code is pushed to main
-
+  deployment_status:
 jobs:
-  run-tests:
-    runs-on: ubuntu-latest  # Uses GitHub's Ubuntu runner
+  run-e2es:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3  # Checks out your repo
