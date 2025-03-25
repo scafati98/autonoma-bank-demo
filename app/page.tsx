@@ -225,7 +225,7 @@ export default function DashboardPage() {
                     onClick={() => setNewCardOpen(true)}
                   >
                     <Plus className="mr-2 h-4 w-4" />
-                    New Card
+                    Create a New Card
                   </Button>
                 </CardFooter>
               </Card>
