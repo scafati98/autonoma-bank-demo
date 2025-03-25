@@ -224,8 +224,8 @@ export default function DashboardPage() {
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                     onClick={() => setNewCardOpen(true)}
                   >
-                    <Plus className="mr-2 h-4 w-4" />
-                    Create a New Card
+                    <Plus className="mr-2 h-3 w-3" />
+                    Create a card
                   </Button>
                 </CardFooter>
               </Card>
