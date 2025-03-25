@@ -187,25 +187,6 @@ export default function DashboardPage() {
               </Card>
               <Card className="border border-gray-200">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Virtual Cards</CardTitle>
-                  <CreditCard className="h-4 w-4 text-blue-600" />
-                </CardHeader>
-                <CardContent>
-                  <div className="text-2xl font-bold">{activeCards} Active</div>
-                  <p className="text-xs text-muted-foreground">+{pendingCards} pending approval</p>
-                </CardContent>
-                <CardFooter>
-                  <Button
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                    onClick={() => setNewCardOpen(true)}
-                  >
-                    <Plus className="mr-2 h-4 w-4" />
-                    New Card
-                  </Button>
-                </CardFooter>
-              </Card>
-              <Card className="border border-gray-200">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Savings Account</CardTitle>
                   <DollarSign className="h-4 w-4 text-blue-600" />
                 </CardHeader>
@@ -229,7 +210,25 @@ export default function DashboardPage() {
                   </Button>
                 </CardFooter>
               </Card>
-           
+              <Card className="border border-gray-200">
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">Virtual Cards</CardTitle>
+                  <CreditCard className="h-4 w-4 text-blue-600" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{activeCards} Active</div>
+                  <p className="text-xs text-muted-foreground">+{pendingCards} pending approval</p>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                    onClick={() => setNewCardOpen(true)}
+                  >
+                    <Plus className="mr-2 h-4 w-4" />
+                    New Card
+                  </Button>
+                </CardFooter>
+              </Card>
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
               <Card className="col-span-4 border border-gray-200">
