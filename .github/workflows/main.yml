@@ -1,0 +1,14 @@
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Autonoma Tests
+        run: |
+          curl -X POST \
+              --silent \
+              --retry 3 \
+              --retry-connrefused \
+              --location "https://api.prod.autonoma.app/v1/run/folder/cm8olka7u000qf9fg3fe4fh3" \
+              --header "autonoma-client-id: cm8oodada00052hayhrve24k3" \
+              --header "autonoma-client-secret: 9c454c2ea33dd9ec270276f67c162e4d09b6780927de45f9a9ac78ad63a709c2e10c7fe536bd3cae7448f5dd74bd35a7" \
+              --header "Content-Type: application/json" || true
