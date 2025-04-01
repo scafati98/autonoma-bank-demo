@@ -210,7 +210,7 @@ export default function DashboardPage() {
                   </Button>
                 </CardFooter>
               </Card>
-              <Card className="border border-gray-200">
+              {/* <Card className="border border-gray-200">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Virtual Cards</CardTitle>
                   <CreditCard className="h-4 w-4 text-blue-600" />
@@ -228,7 +228,7 @@ export default function DashboardPage() {
                     Create a New Card
                   </Button>
                 </CardFooter>
-              </Card>
+              </Card> */}
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
               <Card className="col-span-4 border border-gray-200">
