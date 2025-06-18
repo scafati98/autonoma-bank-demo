@@ -3,20 +3,22 @@ name: Run Autonoma Tests
 on:
   deployment_status:
 jobs:
-  run-e2es:
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+  run-folder-cm8olka7u000qf9fg3fe4fh3v:
     runs-on: ubuntu-latest
+    name: Autonoma Test "Autonoma Bank"
+ 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3  # Checks out your repo
-
-      - name: Run Tests on Autonoma API
+      - name: Run Folder Tests "Autonoma Bank"
+        id: step-1
+        uses: autonoma-ai/actions/folder-runner@v1
+        with:
+          folder-id: 'cm8olka7u000qf9fg3fe4fh3v'
+          client-id: ${{ secrets.AUTONOMA_CLIENT_ID }}
+          client-secret: ${{ secrets.AUTONOMA_CLIENT_SECRET }}
+          max-wait-time: '10' #IN MINUTES
+      - name: Show "Autonoma Bank" results
+        if: always()
         run: |
-          curl -X POST \
-            --silent \
-            --retry 3 \
-            --retry-connrefused \
-            --location 'https://api.prod.autonoma.app/v1/run/folder/cm8olka7u000qf9fg3fe4fh3v' \
-            --header "autonoma-client-id: ${{ secrets.AUTONOMA_CLIENT_ID }}" \
-            --header "autonoma-client-secret: ${{ secrets.AUTONOMA_CLIENT_SECRET }}" \
-            --header 'Content-Type: application/json'
+          echo "Test status: ${{ steps.step-1.outputs.final-status }}"
+          echo "Message: ${{ steps.step-1.outputs.message }}"
+          echo "View results at: ${{ steps.step-1.outputs.url }}"
